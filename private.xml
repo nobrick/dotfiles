@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<root>
+    <appdef>
+        <appname>FIREFOX</appname>
+        <equal>org.mozilla.firefox</equal>
+    </appdef>
+    <appdef>
+        <appname>VIM</appname>
+        <prefix>org.vim.</prefix>>
+    </appdef>
+    <appdef>
+        <appname>TERMINAL</appname>
+        <equal>com.apple.Terminal</equal>
+        <equal>iTerm</equal>
+        <equal>net.sourceforge.iTerm</equal>
+        <equal>com.googlecode.iterm2</equal>
+    </appdef>
+    <appdef>
+        <appname>FUSION</appname>
+        <equal>com.vmware.fusion</equal>
+    </appdef>
+    <appdef>
+        <appname>FINDER</appname>
+        <equal>com.apple.finder</equal>
+    </appdef>
+    <replacementdef>
+        <replacementname>IGNORE_APPS</replacementname>
+        <replacementvalue>VIM, TERMINAL, FUSION, FINDER</replacementvalue>
+    </replacementdef>
+
+    <item>
+        <name>Fn-a Home, Fn-e End</name>
+        <identifier>private.homeend</identifier>
+        <autogen>
+            --KeyToKey--
+            KeyCode::A, ModifierFlag::FN,
+            KeyCode::HOME
+        </autogen>
+        <autogen>
+            --KeyToKey--
+            KeyCode::E, ModifierFlag::FN,
+            KeyCode::END
+        </autogen>
+    </item>
+    <item>
+        <name>Fn-Ctrl Capslock</name>
+        <identifier>private.fnctrl</identifier>
+        <autogen>
+            --KeyToKey--
+            KeyCode::CONTROL_L, ModifierFlag::FN | ModifierFlag::CONTROL_L,
+            KeyCode::CAPSLOCK
+        </autogen>
+    </item>
+    <item>
+        <name>vk_C-V, vk_Opt-V</name>
+        <identifier>private.vkcvov</identifier>
+        <not>{{IGNORE_APPS}}</not>
+        <autogen>
+            --KeyToKey--
+            KeyCode::V, VK_CONTROL | ModifierFlag::NONE,
+            KeyCode::PAGEDOWN
+        </autogen>
+        <autogen>
+            --KeyToKey--
+            KeyCode::V, VK_CONTROL | VK_SHIFT | ModifierFlag::NONE,
+            KeyCode::PAGEDOWN, VK_SHIFT
+        </autogen>
+        <autogen>
+            --KeyToKey--
+            KeyCode::V, VK_OPTION | ModifierFlag::NONE,
+            KeyCode::PAGEUP
+        </autogen>
+        <autogen>
+            --KeyToKey--
+            KeyCode::V, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+            KeyCode::PAGEUP, VK_SHIFT
+        </autogen>
+    </item>
+    <item>
+        <name>vk_Opt-F, vk_Opt-B</name>
+        <identifier>vkofob</identifier>
+        <not>{{IGNORE_APPS}}</not>
+        <autogen>
+            --KeyToKey--
+            KeyCode::F, VK_OPTION | ModifierFlag::NONE,
+            KeyCode::CURSOR_RIGHT, VK_OPTION
+        </autogen>
+        <autogen>
+            --KeyToKey--
+            KeyCode::F, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+            KeyCode::CURSOR_RIGHT, VK_OPTION | VK_SHIFT
+        </autogen>
+        <autogen>
+            --KeyToKey--
+            KeyCode::B, VK_OPTION | ModifierFlag::NONE,
+            KeyCode::CURSOR_LEFT, VK_OPTION
+        </autogen>
+        <autogen>
+            --KeyToKey--
+            KeyCode::B, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+            KeyCode::CURSOR_LEFT, VK_OPTION | VK_SHIFT 
+        </autogen>
+    </item>
+    <item>
+        <name>single Contrl to Esc in Vim and Terminal</name>
+        <only>VIM, TERMINAL, FIREFOX</only>
+        <identifier>private.singlecontrol</identifier>
+        <autogen>
+            --KeyOverlaidModifier--
+            KeyCode::CONTROL_L,
+            KeyCode::CONTROL_L,
+            KeyCode::ESCAPE
+        </autogen>
+    </item>
+    <item>
+        <name>single Fn to Cmd-H</name>
+        <identifier>private.singlefncmdh</identifier>
+        <autogen>
+            --KeyOverlaidModifier--
+            KeyCode::FN, 
+            KeyCode::FN,
+            KeyCode::H, VK_COMMAND
+        </autogen> 
+    </item>
+</root>
+

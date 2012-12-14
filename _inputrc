@@ -1,0 +1,16 @@
+$if mode=vi
+    "\C-l": "\e\C-la"
+    "\C-a": "\e0i"
+    "\C-e": "\e$a"
+    
+    "\e[A": history-search-backward
+    "\e[B": history-search-forward
+    "\C-n":menu-complete
+
+    # bind -m vi-insert "\C-p":dynamic-complete-history
+    "\C-p": dynamic-complete-history
+
+    # alt-. for the last argument
+    "\e.": yank-last-arg
+$endif
+

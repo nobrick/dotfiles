@@ -1,0 +1,27 @@
+export PS1="\W\\$ "
+set -o vi
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+export GBUILD_DIR=/Users/eric/gccLab/stage1Build
+export GSOURCE_DIR=/Users/eric/gccLab/gcc-4.6.2/gcc
+export GTEST_DIR=/Users/eric/gccLab/test101
+export GREF_DIR=/Users/eric/gccLab/reference
+export GACHI_DIR=/Users/eric/gccLab/new-gcc/gcc462/gcc
+#export PATH=/Users/eric/my_gcc/bin:$PATH
+export MYCC=/Users/eric/gccLab/stage1Build/gcc/cc1
+alias exportmygcc="export PATH=/Users/eric/my_gcc/bin:$PATH"
+alias mycc="/Users/eric/gccLab/stage1Build/gcc/cc1" 
+alias wget="curl -O"
+alias ll="ls -l"
+alias pu="pushd ."
+alias p="popd"
+alias u="cd .."
+alias mls="mdfind -onlyin . -name"
+alias mfind="mdfind -onlyin ."
+
+pman() { man -t "${1}" | open -f -a /Applications/Preview.app; }
+
+# Adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+

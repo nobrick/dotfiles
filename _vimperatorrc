@@ -1,0 +1,78 @@
+" set gui=none,tabs
+set gui=none
+set titlestring=": )"
+set smartcase
+nmap gf :o google 
+nmap gF :t google 
+nmap gw :o zh.wikipedia.org/wiki/
+nmap gW :o wikipedia 
+map <C-1> :set gui=navigation,menu,tabs,addons<CR>
+imap <C-1> <ESC>:set gui=navigation,menu,tabs,addons<CR>
+map <C-2> :sidebar bookmarks<CR>
+imap <C-2> <ESC>:sidebar bookmarks<CR>
+map <C-3> :sidebar ScrapBook<CR>
+imap <C-3> <ESC>:sidebar ScrapBook<CR>
+map <C-4> :sidebar downloads<CR>
+imap <C-4> <ESC>:sidebar downloads<CR>
+map <C-Esc> :set gui=none<CR>
+imap <C-Esc> <ESC>:set gui=none<CR>
+
+map <C-`> :set gui=none,tabs<CR>:sbclose<CR>
+imap <C-`> <ESC>:set gui=none,tabs<CR><ESC>:sbclose<CR>
+
+nnoremap A h
+nnoremap D l
+nnoremap H h
+nnoremap L l
+nnoremap E l
+nnoremap ih gT<ESC>gT<ESC>gT<ESC>gT
+nnoremap il gt<ESC>gt<ESC>gt<ESC>gt
+nnoremap za gT<ESC>gT<ESC>gT<ESC>gT
+nnoremap zd gt<ESC>gt<ESC>gt<ESC>gt
+nnoremap ze gt<ESC>gt<ESC>gt<ESC>gt
+
+
+noremap c <C-o>
+noremap v <C-i>
+noremap w <Up><Up><Up><Up><Up><Up><Up><Up>
+noremap s <Down><Down><Down><Down><Down><Down><Down><Down>
+noremap q F
+noremap Q u
+noremap e gt
+noremap a gT
+noremap x <C-c>
+noremap W zO
+noremap S zI
+
+noremap h gT
+noremap l gt
+noremap J zI
+noremap K zO
+noremap zi zI
+noremap zo zO
+noremap zI zi
+noremap zO zo
+noremap j <Down><Down><Down><Down><Down><Down><Down><Down>
+noremap k <Up><Up><Up><Up><Up><Up><Up><Up>
+noremap , <C-o>
+noremap . <C-i>
+
+noremap 0 g0
+noremap $ g$
+noremap \\ d
+
+noremap <TAB> <C-^>
+noremap ; <C-^>
+noremap `` ''
+noremap v ;
+noremap | :set fullscreen<CR>
+noremap \" :set online<CR>
+
+map <C-h> gT
+imap <C-h> <ESC>gT
+map <C-l> gt
+imap <C-l> <ESC>gt
+
+set previouspattern=\s*上一页|上一张|上页|前一页|Previous\s*,\bprev|previous\b,^<$,^(<<)$,^(<),(<)$,^前(の)?ページ,\b前.*,\s*前へ,\b←
+set nextpattern=\s*下一页|下一张|下页|Next\s*,\bnext\b,^>$,^(>>)$,^(>),(>)$,\bmore\b,^次(の)?ページ,\b次.*,\s*次へ,→\b
+
