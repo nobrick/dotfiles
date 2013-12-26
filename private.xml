@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <root>
     <appdef>
+        <appname>XCODE</appname>
+        <equal>com.apple.dt.Xcode</equal>
+    </appdef>
+    <appdef>
         <appname>FIREFOX</appname>
         <equal>org.mozilla.firefox</equal>
     </appdef>
@@ -14,6 +18,10 @@
         <equal>iTerm</equal>
         <equal>net.sourceforge.iTerm</equal>
         <equal>com.googlecode.iterm2</equal>
+    </appdef>
+    <appdef>
+        <appname>IDE</appname>
+        <equal>org.eclipse.eclipse</equal>
     </appdef>
     <appdef>
         <appname>FUSION</appname>
@@ -103,7 +111,7 @@
     </item>
     <item>
         <name>single Contrl to Esc in Vim and Terminal</name>
-        <only>VIM, TERMINAL, FIREFOX</only>
+        <only>VIM, TERMINAL, FIREFOX, IDE, FUSION</only>
         <identifier>private.singlecontrol</identifier>
         <autogen>
             --KeyOverlaidModifier--
@@ -119,6 +127,34 @@
             --KeyOverlaidModifier--
             KeyCode::FN, 
             KeyCode::FN,
+            KeyCode::H, VK_COMMAND
+        </autogen> 
+    </item>
+
+    <item>
+        <name>ctrl-j,k in xcode</name>
+        <only>XCODE</only>
+        <identifier>private.ctrljkinxcode</identifier>
+       <autogen>
+            --KeyToKey--
+            KeyCode::J, VK_CONTROL | ModifierFlag::NONE,
+            KeyCode::CURSOR_DOWN
+        </autogen>
+       <autogen>
+            --KeyToKey--
+            KeyCode::K, VK_CONTROL | ModifierFlag::NONE,
+            KeyCode::CURSOR_UP
+        </autogen>
+    </item>
+
+    <item>
+        <name>LeftControl to Fn</name>
+        <not>VIM, TERMINAL, FIREFOX</not>
+        <identifier>private.leftcontrol</identifier>
+        <autogen>
+            --KeyOverlaidModifier--
+            KeyCode::CONTROL_L, 
+            KeyCode::CONTROL_L,
             KeyCode::H, VK_COMMAND
         </autogen> 
     </item>
