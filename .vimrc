@@ -40,7 +40,7 @@ fu SetTabStop2()
 endf
 au BufRead,BufNewFile *.rb,*.yml,*.erb call SetTabStop2()
 
-au BufRead words.txt setlocal spell
+au BufRead words.txt,COMMIT_EDITMSG setlocal spell
 
 
 let mapleader="\\" 
