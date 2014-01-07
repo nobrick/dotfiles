@@ -3,6 +3,11 @@ set nocompatible
 "let g:ruby_path=system('/Users/tornado/.rvm/rubies/ruby-2.0.0-p247')
 "let g:ruby_path = system('rvm current')
 
+let g:pathogen_disabled = []
+if !has('gui_running')
+    call add(g:pathogen_disabled, 'YouCompleteMe')
+endif
+
 call pathogen#infect()
 
 syntax on
