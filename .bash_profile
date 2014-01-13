@@ -25,7 +25,7 @@ alias v="mvim"
 
 g() { grep -r -n "$@" . ;}
 pman() { man -t "${1}" | open -f -a /Applications/Preview.app; }
-export EDITOR='mvim -f -c "au VimLeave * !open -a Terminal"'
+export EDITOR='mvim -f'
 
 source ~/git-completion.bash
 
