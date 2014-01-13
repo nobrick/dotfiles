@@ -12,5 +12,6 @@ $if mode=vi
 
     # alt-. for the last argument
     "\e.": yank-last-arg
+    set editing-mode vi
+    set keymap vi-command
 $endif
-
