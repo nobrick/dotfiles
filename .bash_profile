@@ -25,18 +25,24 @@ alias v="mvim"
 
 g() { grep -r -n "$@" . ;}
 pman() { man -t "${1}" | open -f -a /Applications/Preview.app; }
+export EDITOR='mvim -f -c "au VimLeave * !open -a Terminal"'
 
 source ~/git-completion.bash
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# MacPorts Installer addition on 2013-03-06_at_00:32:05: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
 
 # Setting PATH for Python 3.3
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
 export PATH
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH=/Users/tornado/p/jruby-1.7.8/bin:$PATH
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+
+# MacPorts Installer addition on 2013-03-06_at_00:32:05: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
