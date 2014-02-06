@@ -23,7 +23,7 @@ alias mls="mdfind -onlyin . -name"
 alias mfind="mdfind -onlyin ."
 alias v="mvim"
 
-g() { grep -r -n "$@" . ;}
+g() { grep -rnaI "$@" --color --exclude=\*.log --exclude-dir=".git" .; }
 pman() { man -t "${1}" | open -f -a /Applications/Preview.app; }
 export EDITOR='mvim -f'
 
