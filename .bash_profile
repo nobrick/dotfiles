@@ -1,4 +1,3 @@
-export PS1="\W\\$ "
 set -o vi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -28,6 +27,8 @@ pman() { man -t "${1}" | open -f -a /Applications/Preview.app; }
 export EDITOR='mvim -f'
 
 source ~/git-completion.bash
+source ~/git-prompt.sh
+export PS1="\W\$(__git_ps1)\\$ "
 
 # Setting PATH for Python 3.3
 # The orginal version is saved in .bash_profile.pysave
@@ -45,4 +46,3 @@ eval "$(rbenv init -)"
 # MacPorts Installer addition on 2013-03-06_at_00:32:05: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
-
