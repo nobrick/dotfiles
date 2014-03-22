@@ -22,6 +22,9 @@ alias mls="mdfind -onlyin . -name"
 alias mfind="mdfind -onlyin ."
 alias v="mvim"
 
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+
 g() { grep -rnaI "$@" --color --exclude=\*.log --exclude-dir=".git" .; }
 pman() { man -t "${1}" | open -f -a /Applications/Preview.app; }
 export EDITOR='mvim -f'
@@ -35,9 +38,8 @@ export PS1="\W\$(__git_ps1)\\$ "
 PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
 export PATH
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export PATH=/Users/tornado/p/jruby-1.7.8/bin:$PATH
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#export PATH=/Users/tornado/p/jruby-1.7.8/bin:$PATH
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
