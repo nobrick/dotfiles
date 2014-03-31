@@ -3,9 +3,12 @@ set nocompatible
 "let g:ruby_path=system('/Users/tornado/.rvm/rubies/ruby-2.0.0-p247')
 "let g:ruby_path = system('rvm current')
 
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
 let g:pathogen_disabled = []
 if !has('gui_running')
     call add(g:pathogen_disabled, 'YouCompleteMe')
+    "call add(g:pathogen_disabled, 'Command-T')
 endif
 
 call pathogen#infect()
@@ -27,16 +30,16 @@ set wildignore=*.o,*.class,*.pyc
 set wildignore+=*.mp3,*.mp4,*.dmg,*.jpg,*.zip,*.gz,*.rar,*.png,*.pdf,*.gif,*.doc,*.ppt,*.docx,*.exe,*.pptx,*.rtf,*.part,*.flv,*.jar,*.graffle,*.xls,*.mobi,*.doentry,*.swp
 
 "let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-set gfn=Monaco:h14
+set gfn=Monaco:h16
 
 set smartindent
 
 set expandtab
 au FileType Makefile set noexpandtab
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 fu SetTabStop2()
     set tabstop=2
@@ -164,6 +167,7 @@ cmap <C-a> <Home>
 cmap cdd cd ~/Dropbox/
 cmap cdr cd ~/my_rails/
 cmap cdp cd ~/p/
+cmap w. w !sudo tee
 
 noremap <C-m>. :lcd %:p:h<CR>
 
@@ -221,3 +225,5 @@ set cryptmethod=blowfish
 
 set nobackup
 set noswapfile
+
+set nolinebreak
