@@ -20,7 +20,7 @@ alias p="popd"
 alias u="cd ..; pwd"
 alias mls="mdfind -onlyin . -name"
 alias mfind="mdfind -onlyin ."
-alias v="mvim"
+alias v="open -a macvim"
 
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
