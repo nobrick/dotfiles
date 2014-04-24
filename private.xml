@@ -158,5 +158,43 @@
             KeyCode::H, VK_COMMAND
         </autogen> 
     </item>
+
+    <deviceproductdef>
+        <productname>HHKB_PRO2</productname>
+        <productid>0x0100</productid>
+    </deviceproductdef>
+
+    <devicevendordef>
+      <vendorname>TOPRE</vendorname>
+      <vendorid>0x0853</vendorid>
+    </devicevendordef>
+
+    <item>
+      <name>HHKB Pro2</name>
+      <appendix>HHKB specific</appendix>
+      <list>
+        <item>
+          <identifier>private.hhkb_swap_escape_backquote</identifier>
+          <name>Swap Escape and `</name>
+          <device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB_PRO2</device_only>
+          <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+          <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::ESCAPE</autogen>
+        </item>
+        <item>
+          <identifier>private.enable_left_option_as_command_h</identifier>
+          <name>Single left option as command h</name>
+          <device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB_PRO2</device_only>
+          <autogen>--KeyOverlaidModifier-- KeyCode::OPTION_L, KeyCode::OPTION_L, KeyCode::H, VK_COMMAND</autogen>
+        </item>
+        <item>
+          <identifier>private.hhkb_swap_delete_backslash</identifier>
+          <name>Swap Delete and \</name>
+          <device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB_PRO2</device_only>
+          <appendix>disabled by default</appendix>
+          <autogen>--KeyToKey-- KeyCode::DELETE, KeyCode::BACKSLASH</autogen>
+          <autogen>--KeyToKey-- KeyCode::BACKSLASH, KeyCode::DELETE</autogen>
+        </item>
+      </list>
+    </item>
 </root>
 
