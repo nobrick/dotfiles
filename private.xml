@@ -159,6 +159,12 @@
         </autogen> 
     </item>
 
+    <item>
+      <identifier>private.backspace</identifier>
+      <name>Set command-h as backspace</name>
+      <autogen>--KeyToKey-- KeyCode::H, VK_COMMAND, KeyCode::DELETE</autogen>
+    </item>
+
     <deviceproductdef>
         <productname>HHKB_PRO2</productname>
         <productid>0x0100</productid>
@@ -174,10 +180,15 @@
       <appendix>HHKB specific</appendix>
       <list>
         <item>
-          <identifier>private.hhkb_swap_escape_backquote</identifier>
-          <name>Swap Escape and `</name>
+          <identifier>private.hhkb_set_top_left_key</identifier>
+          <name>Set top-left as ` key</name>
           <device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB_PRO2</device_only>
           <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+        </item>
+        <item>
+          <identifier>private.hhkb_set_top_right_key</identifier>
+          <name>Set top-right as esc key</name>
+          <device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB_PRO2</device_only>
           <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::ESCAPE</autogen>
         </item>
         <item>
@@ -187,11 +198,15 @@
           <autogen>--KeyOverlaidModifier-- KeyCode::OPTION_L, KeyCode::OPTION_L, KeyCode::H, VK_COMMAND</autogen>
         </item>
         <item>
-          <identifier>private.hhkb_swap_delete_backslash</identifier>
-          <name>Swap Delete and \</name>
+          <identifier>private.hhkb_set_delete_as_backslash</identifier>
+          <name>Set original delete as \ key</name>
           <device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB_PRO2</device_only>
-          <appendix>disabled by default</appendix>
           <autogen>--KeyToKey-- KeyCode::DELETE, KeyCode::BACKSLASH</autogen>
+        </item>
+        <item>
+          <identifier>private.hhkb_set_original_backslash</identifier>
+          <name>Set original \ key as delete key</name>
+          <device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB_PRO2</device_only>
           <autogen>--KeyToKey-- KeyCode::BACKSLASH, KeyCode::DELETE</autogen>
         </item>
       </list>
