@@ -162,7 +162,7 @@
     <item>
       <identifier>private.backspace</identifier>
       <name>Set command-h as backspace</name>
-      <autogen>--KeyToKey-- KeyCode::H, VK_COMMAND, KeyCode::DELETE</autogen>
+      <autogen>--KeyToKey-- KeyCode::H, VK_COMMAND | ModifierFlag::NONE, KeyCode::DELETE</autogen>
     </item>
 
     <deviceproductdef>
