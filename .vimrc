@@ -178,6 +178,8 @@ noremap <C-m>d :cd ~/Dropbox/notes/<CR>
 noremap <C-m><C-m> :CommandT<CR>
 noremap <Leader>t :CommandTTag<CR>
 
+map <Leader>\ <Leader>c<Space>
+
 map <C-y> "*y
 
 set linebreak
@@ -227,3 +229,7 @@ set nobackup
 set noswapfile
 
 set nolinebreak
+
+autocmd BufReadPost,BufNewFile *_spec.rb set syntax=rspec
+
+let g:vim_markdown_folding_disabled=1
