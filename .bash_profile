@@ -24,6 +24,7 @@ alias v="open -a macvim"
 
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias openssl_gen_pass='openssl rand -base64 9'
 
 g() { grep -rnaI "$@" --color --exclude=\*.log --exclude-dir=".git" .; }
 pman() { man -t "${1}" | open -f -a /Applications/Preview.app; }
@@ -46,5 +47,5 @@ eval "$(rbenv init -)"
 
 
 # MacPorts Installer addition on 2013-03-06_at_00:32:05: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
