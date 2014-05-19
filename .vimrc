@@ -1,5 +1,8 @@
 set nocompatible
 
+" Use old compatible regex engine
+set regexpengine=1
+
 "let g:ruby_path=system('/Users/tornado/.rvm/rubies/ruby-2.0.0-p247')
 "let g:ruby_path = system('rvm current')
 
