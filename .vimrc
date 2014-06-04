@@ -56,6 +56,7 @@ au BufRead words.txt,COMMIT_EDITMSG setlocal spell
 
 let mapleader="\\" 
 " <Leader>t,b already used for Command T plugin
+map <C-Enter> <Leader>b
 
 noremap z1 :NERDTreeToggle<CR>
 noremap z2 :TagbarToggle<CR>
@@ -170,7 +171,7 @@ cmap <C-a> <Home>
 cmap cdd cd ~/Dropbox/
 cmap cdr cd ~/my_rails/
 cmap cdp cd ~/p/
-cmap w. w !sudo tee
+"cmap w. w !sudo tee
 
 noremap <C-m>. :lcd %:p:h<CR>
 
