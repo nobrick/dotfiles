@@ -31,6 +31,7 @@ set wildmenu            " wild char completion menu
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
 set wildignore+=*.mp3,*.mp4,*.dmg,*.jpg,*.zip,*.gz,*.rar,*.png,*.pdf,*.gif,*.doc,*.ppt,*.docx,*.exe,*.pptx,*.rtf,*.part,*.flv,*.jar,*.graffle,*.xls,*.mobi,*.doentry,*.swp
+set wildignore+=tmp/*
 
 "let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 set gfn=Monaco:h16
@@ -237,3 +238,5 @@ set nolinebreak
 autocmd BufReadPost,BufNewFile *_spec.rb set syntax=rspec
 
 let g:vim_markdown_folding_disabled=1
+
+set noballooneval
