@@ -25,8 +25,8 @@ filetype plugin indent on
 set incsearch
 set smartcase
 set autoread		" auto read when file is changed from outside
-set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
+set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
 
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
@@ -129,15 +129,15 @@ endif
 
 if has("gui_macvim")
     set invmacmeta
-    noremap <D-f> w
-    noremap <D-b> b
-    noremap <D-j> gj
-    noremap <D-k> gk
+    "noremap <D-f> w
+    "noremap <D-b> b
+    "noremap <D-j> gj
+    "noremap <D-k> gk
 
-    inoremap <D-f> <C-o>w
-    inoremap <D-b> <C-o>b
-    inoremap <D-j> <C-o>gj
-    inoremap <D-k> <C-o>gk
+    "inoremap <D-f> <C-o>w
+    "inoremap <D-b> <C-o>b
+    "inoremap <D-j> <C-o>gj
+    "inoremap <D-k> <C-o>gk
 
     noremap <M-f> w
     noremap <M-b> b
@@ -240,3 +240,11 @@ autocmd BufReadPost,BufNewFile *_spec.rb set syntax=rspec
 let g:vim_markdown_folding_disabled=1
 
 set noballooneval
+
+let g:UltiSnipsListSnippets = '<C-tab>'
+let g:UltiSnipsEditSplit = 'vertical'
+if has("gui_macvim")
+  let g:UltiSnipsExpandTrigger = '<D-f>'
+  let g:UltiSnipsJumpForwardTrigger = '<D-j>'
+  let g:UltiSnipsJumpBackwardTrigger = '<D-u>'
+endif
