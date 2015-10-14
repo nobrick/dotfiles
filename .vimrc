@@ -1,4 +1,5 @@
 set nocompatible
+set noballooneval
 
 " Use old compatible regex engine
 set regexpengine=1
@@ -34,7 +35,7 @@ set wildignore+=*.mp3,*.mp4,*.dmg,*.jpg,*.zip,*.gz,*.rar,*.png,*.pdf,*.gif,*.doc
 set wildignore+=tmp/*
 
 "let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-set gfn=Monaco:h16
+set gfn=Hack:h16
 
 set smartindent
 
@@ -66,6 +67,7 @@ noremap z3 :GundoToggle<CR>
 noremap <Leader>j :NERDTreeToggle<CR>
 noremap <Leader>k :TagbarToggle<CR>
 noremap <Leader>u :GundoToggle<CR>
+noremap <Leader>g :Gstatus<CR>
 
 noremap <C-s> :mks!$HOME/Session.vim<CR>
 noremap <C-\>l :so $HOME/Session.vim<CR>
@@ -107,10 +109,7 @@ let g:EasyMotion_leader_key = '9'
 hi link EasyMotionShade  Comment
 
 "let g:CommandTMaxCachedDirectories=3
-let g:CommandTMaxDepth=4
-
-cd ~/Dropbox
-
+let g:CommandTMaxDepth=6
 
 "inoremap ( ()<Left>
 "inoremap [ []<Left>
@@ -178,7 +177,11 @@ noremap <C-m>. :lcd %:p:h<CR>
 
 "noremap <C-m>g :cd ~/gitRepos/<CR>
 noremap <C-m>p :cd ~/p<CR>
-noremap <C-m>r :cd ~/my_rails/depot<CR>
+noremap <C-m>t :cd ~/my_rails/together<CR>
+noremap <C-m>r :cd ~/my_rails/ruby-china<CR>
+noremap <C-m>c :cd ~/my_rails/campify<CR>
+noremap <C-m>k :cd ~/my_rails/kano<CR>
+noremap <C-m>m :cd ~/my_rails/momalisa<CR>
 noremap <C-m>d :cd ~/Dropbox/notes/<CR>
 noremap <C-m><C-m> :CommandT<CR>
 noremap <Leader>t :CommandTTag<CR>
@@ -193,13 +196,13 @@ set linebreak
 "inoremap <C-o> <C-x><C-o>
 
 "not compatible with pry + youcompleteme, set disabled
-let g:rubycomplete_buffer_loading = 0 "cause code execution, at risk
+"let g:rubycomplete_buffer_loading = 0 "cause code execution, at risk
 
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_load_gemfile = 1
-let g:rubycomplete_use_bundler = 1
-let g:rubycomplete_rails = 1
-set omnifunc=syntaxcomplete#Complete
+"let g:rubycomplete_classes_in_global = 1
+"let g:rubycomplete_load_gemfile = 1
+"let g:rubycomplete_use_bundler = 1
+"let g:rubycomplete_rails = 1
+"set omnifunc=syntaxcomplete#Complete
 
 let g:ycm_completion_confirm_key = '<enter>'
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -239,8 +242,6 @@ autocmd BufReadPost,BufNewFile *_spec.rb set syntax=rspec
 
 let g:vim_markdown_folding_disabled=1
 
-set noballooneval
-
 let g:UltiSnipsListSnippets = '<C-tab>'
 let g:UltiSnipsEditSplit = 'vertical'
 if has("gui_macvim")
@@ -248,3 +249,8 @@ if has("gui_macvim")
   let g:UltiSnipsJumpForwardTrigger = '<D-j>'
   let g:UltiSnipsJumpBackwardTrigger = '<D-u>'
 endif
+
+set noballooneval
+let g:ackprg = "ag --vimgrep"
+cd ~/my_rails
+nnoremap <Leader>a :Ack
