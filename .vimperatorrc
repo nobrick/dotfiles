@@ -1,11 +1,11 @@
-" set gui=none,tabs
-set gui=none
+set gui=none,tabs
 set titlestring=": )"
 set smartcase
 nmap gf :o google 
 nmap gF :t google 
-nmap gw :o zh.wikipedia.org/wiki/
-nmap gW :o wikipedia 
+nmap gw :o w 
+nmap gW :o zh.wikipedia.org/wiki/
+noremap ; :o f 
 map <C-1> :set gui=navigation,menu,tabs,addons<CR>
 imap <C-1> <ESC>:set gui=navigation,menu,tabs,addons<CR>
 map <C-2> :sidebar bookmarks<CR>
@@ -62,7 +62,6 @@ noremap $ g$
 noremap \\ d
 
 noremap <TAB> <C-^>
-noremap ; <C-^>
 noremap `` ''
 noremap v ;
 noremap | :set fullscreen<CR>

@@ -51,6 +51,20 @@
         </autogen>
     </item>
     <item>
+        <name>Opt-a Home, Opt-e End</name>
+        <identifier>private.homeendctrl</identifier>
+        <autogen>
+            --KeyToKey--
+            KeyCode::A, VK_OPTION | ModifierFlag::NONE,
+            KeyCode::HOME
+        </autogen>
+        <autogen>
+            --KeyToKey--
+            KeyCode::E, VK_OPTION | ModifierFlag::NONE,
+            KeyCode::END
+        </autogen>
+    </item>
+    <item>
         <name>Fn-Ctrl Capslock</name>
         <identifier>private.fnctrl</identifier>
         <autogen>
@@ -62,7 +76,7 @@
     <item>
         <name>vk_C-V, vk_Opt-V</name>
         <identifier>private.vkcvov</identifier>
-        <not>{{IGNORE_APPS}}</not>
+        <not>VIM</not>
         <autogen>
             --KeyToKey--
             KeyCode::V, VK_CONTROL | ModifierFlag::NONE,
@@ -111,7 +125,6 @@
     </item>
     <item>
         <name>single Contrl to Esc in Vim and Terminal</name>
-        <only>VIM, TERMINAL, FIREFOX, IDE, FUSION</only>
         <identifier>private.singlecontrol</identifier>
         <autogen>
             --KeyOverlaidModifier--
@@ -174,6 +187,23 @@
       <vendorname>TOPRE</vendorname>
       <vendorid>0x0853</vendorid>
     </devicevendordef>
+
+    <item>
+      <name>Vim only</name>
+      <appendix>Vim specific</appendix>
+      <only>VIM</only>
+      <list>
+        <item>
+          <identifier>private.vim_ctrl_i_key</identifier>
+          <name>Set ctrl-i key as shift-ctrl-\ in Vim</name>
+          <autogen>
+            __KeyToKey__
+            KeyCode::I,         ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+            KeyCode::BACKSLASH, ModifierFlag::CONTROL_L
+          </autogen>
+        </item>
+      </list>
+    </item>
 
     <item>
       <name>HHKB Pro2</name>

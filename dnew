@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'chronic'
+
+arg = ARGV.join(' ').strip
+arg.gsub!(/\byes\s*(\d+)/, 'yesterday \1')
+arg.gsub!(/^-{0,1}(\d+)h$/, '\1 hours ago')
+arg.gsub!(/^-{0,1}(\d+)(m|min)$/, '\1 minutes ago')
+puts arg
+time = Chronic.parse(arg).to_s
+command = if arg && arg != ''
+            "dayone -d='#{time}' new"
+          else
+            "dayone new"
+          end
+puts command
+exec command
