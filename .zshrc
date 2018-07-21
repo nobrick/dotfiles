@@ -73,6 +73,9 @@ else
   export EDITOR='mvim'
 fi
 
+alias vim='/usr/local/opt/macvim/MacVim.app/Contents/MacOS/Vim'
+alias vi='/usr/local/opt/macvim/MacVim.app/Contents/MacOS/Vim'
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -109,6 +112,7 @@ alias gk='g_dsf'
 alias rgc='rails generate controller'
 alias mt='mix test'
 alias bfg='java -jar $HOME/my_bins/bfg-1.13.0.jar'
+unalias rg
 g_dsf() {
   git diff --color "$@" | diff-so-fancy | less --tabs=1,5 -RFX
 }
@@ -155,7 +159,7 @@ t() {
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 iterm2_print_user_vars() {
-  iterm2_set_user_var cTime $(date "+%M")
+  iterm2_set_user_var cTime $(printf "%.0f%d\n" $((`date "+%M"` / 7.0)) $((`date "+%H"` % 10)))
 }
 
 export NVM_DIR="/Users/tornado/.nvm"
